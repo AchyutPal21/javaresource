@@ -1,29 +1,17 @@
 package com.prepjava;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.prepjava.dsa.recursion.MergeSortRec;
 import com.prepjava.dsa.recursion.QuickSortRec;
+import com.prepjava.dsa.recursion.SolveCombinationSum;
 
 public class App {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(4);
-        list.add(6);
-        list.add(7);
-        list.add(9);
-        list.add(12);
-        list.add(1);
-        list.add(2);
-        list.add(7);
-        list.add(19);
-        list.add(-1);
-        QuickSortRec obj = new QuickSortRec();
-        obj.sort(list);
-
-        for (int val : list) {
-            System.out.print(val + " ");
-        }
+        SolveCombinationSum obj = new SolveCombinationSum();
+        List<List<Integer>> combinations = obj.combinationSum(new int[]{2,3,6,7}, 7);
+        System.out.println(combinations);
 
     }
 }
