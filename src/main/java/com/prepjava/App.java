@@ -1,17 +1,28 @@
 package com.prepjava;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import com.prepjava.dsa.recursion.MergeSortRec;
-import com.prepjava.dsa.recursion.QuickSortRec;
-import com.prepjava.dsa.recursion.SolveCombinationSum;
+import com.prepjava.dsa.recursion.SolveCombinationSumTwo;
 
 public class App {
     public static void main(String[] args) {
-        SolveCombinationSum obj = new SolveCombinationSum();
-        List<List<Integer>> combinations = obj.combinationSum(new int[]{2,3,6,7}, 7);
+        SolveCombinationSumTwo combinationSumTwo = new SolveCombinationSumTwo();
+        // int[] candidates = new int[]{10,1,2,7,6,1,5};
+        int[] candidates = new int[]{3,1,2,4};
+        // int target = 8;
+        int target = 5;
+        List<List<Integer>> combinations = combinationSumTwo.combinationSum2(candidates, target);
         System.out.println(combinations);
+
+
 
     }
 }
+
+
+/*
+
+
+      conso
+
+ */
