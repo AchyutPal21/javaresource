@@ -1,28 +1,32 @@
 package com.prepjava;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
-import com.prepjava.dsa.recursion.SolveCombinationSumTwo;
+import com.prepjava.core.threads.CallableMergeSort;
 
 public class App {
     public static void main(String[] args) {
-        SolveCombinationSumTwo combinationSumTwo = new SolveCombinationSumTwo();
-        // int[] candidates = new int[]{10,1,2,7,6,1,5};
-        int[] candidates = new int[]{3,1,2,4};
-        // int target = 8;
-        int target = 5;
-        List<List<Integer>> combinations = combinationSumTwo.combinationSum2(candidates, target);
-        System.out.println(combinations);
+        List<Integer> list = new ArrayList<>();
+        list.add(4);
+        list.add(9);
+        list.add(1);
+        list.add(0);
+        list.add(2);
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        CallableMergeSort sort = new CallableMergeSort(list, executorService);
 
-
-
+        try {
+            // List<Integer> sortedList = sort.call();
+            Future<List<Integer>> sortedFuture = executorService.submit(sort);
+            System.out.println("Object Sorted list: " + sortedFuture.get());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            executorService.shutdown();
+        }
     }
 }
-
-
-/*
-
-
-      conso
-
- */
