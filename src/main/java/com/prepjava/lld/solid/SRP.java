@@ -83,9 +83,9 @@ class InvoiceSRP {
   }
 }
 
-class InvoiceDao {
+class InvoiceDaoSRP {
   private InvoiceSRP invoiceSRP;
-  public InvoiceDao (InvoiceSRP invoiceSRP) {
+  public InvoiceDaoSRP (InvoiceSRP invoiceSRP) {
     this.invoiceSRP = invoiceSRP;
   }
 

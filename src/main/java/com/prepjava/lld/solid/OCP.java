@@ -2,9 +2,9 @@ package com.prepjava.lld.solid;
 
 // Open/Close Principle says open for extension but close for modification.
 
-class InvoiceDao {
+class InvoiceDaoOCP {
   private InvoiceSRP invoiceSRP;
-  public InvoiceDao (InvoiceSRP invoiceSRP) {
+  public InvoiceDaoOCP (InvoiceSRP invoiceSRP) {
     this.invoiceSRP = invoiceSRP;
   }
 
