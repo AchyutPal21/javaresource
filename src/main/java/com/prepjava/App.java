@@ -10,23 +10,14 @@ import com.prepjava.core.threads.CallableMergeSort;
 
 public class App {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(4);
-        list.add(9);
-        list.add(1);
-        list.add(0);
-        list.add(2);
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        CallableMergeSort sort = new CallableMergeSort(list, executorService);
+        System.out.println(true && true);
+        System.out.println(true && false);
+        System.out.println(false && true);
+        System.out.println(false && false);
 
-        try {
-            // List<Integer> sortedList = sort.call();
-            Future<List<Integer>> sortedFuture = executorService.submit(sort);
-            System.out.println("Object Sorted list: " + sortedFuture.get());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally {
-            executorService.shutdown();
-        }
+        System.out.println(true || true);
+        System.out.println(true || false);
+        System.out.println(false || true);
+        System.out.println(false || false);
     }
 }
